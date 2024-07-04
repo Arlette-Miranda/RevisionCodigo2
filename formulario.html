@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Se identiza el código -->
 
 <head>
   <meta charset="UTF-8">
@@ -8,33 +9,53 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
   <title>Formulario</title>
 </head>
+
 <body>
-  <h1>Bienvenidos a mi fiesta</h1>
-  <h2>Por favor, confirmar asistencia:</h2>
-
-  <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
-    <br />
-    Edad <input type="number" name="age" id="age">
-    <br />
-
-    Nacionalidad
-    <select name="nationality" id="nationality">
-      <option value="ar">Argentina</option>
-      <option value="mx">Mexicana</option>
-      <option value="per">Peruana</option>
-      <option value="vnzl">Venezolana</option>
-    </select>
-    <br />
-    <input type="submit">
-  </form>
-
-  <div>
+  <div> <!-- Incluyo en el div a h1 -->
+    <h1>Bienvenidos a mi fiesta</h1>
+    <!-- Considero que es un subtitulo, por lo cual lo reubico debajo del título principal -->
     <h2>Lista de invitados</h2>
-
+    <!-- Se agrega a div y se pone como h3 para continuar con el texto y mejor lectura -->
+    <h3>Por favor, confirmar asistencia:</h3>
   </div>
 
-  <script src="../formulario.js"></script>
+  <form class="formulario">
+    <fieldset id="datos-invitado"> <!-- Se agrega fieldset para agrupar datos -->
+
+      <label> Nombre <!-- Se agrega en label -->
+        <input type="text" name="name" id="name">
+      </label>
+      <br> <!-- Se quita / <br>, ya que es de auto cierre. -->
+      <br> <!-- Se agrega para tener espacio entre campos.  -->
+
+      <label> Edad <!-- Se agrega en label -->
+        <!-- Se agrega limites para elegir edad -->
+        <input type="number" name="age" id="age" min="1" max="120">
+      </label>
+      <br><!-- Se quita / <br>, ya que es de auto cierre.  -->
+      <br> <!-- Se agrega para tener espacio entre campos.  -->
+
+      <label> Nacionalidad </label> <!-- Se agrega en label -->
+      <select class="elemento-lista" name="nationality" id="nationality">
+
+        <option value="ar">Argentina</option>
+        <option value="mx">Mexicana</option>
+        <option value="per">Peruana</option>
+        <option value="vnzl">Venezolana</option>
+
+      </select>
+
+    </fieldset>
+
+    <br> <!-- Se quita / <br>, ya que es de auto cierre.  -->
+    <br> <!-- Se agrega para tener espacio entre campos.  -->
+
+    <!-- Se sustituye input por button -->
+    <button type="submit"> Enviar </button>
+
+  </form>
+
+  <script src="./formulario.js"></script> <!-- Se quita "." para redirigir al archivo correcto -->
 </body>
 
 </html>
